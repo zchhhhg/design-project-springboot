@@ -1,0 +1,156 @@
+POST http://localhost:8080/api/login
+Content-Type: application/json
+//登录
+{
+  "username": "kfzjw008",
+  "password": "kfzjw0000"
+}
+
+###
+POST http://localhost:8080/api/admin/allziliao
+//查看所有用户
+token:db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+###
+POST http://localhost:8080/api/admin/adduser
+//添加用户
+token:db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+      "username": "kfzjw",
+      "name": "陈新",
+      "power": 2
+    }
+
+###
+POST http://localhost:8080/api/admin/updateuser
+//修改用户信息
+token:db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "id": 5,
+  "username": "kfzjw",
+  "name": "陈新22222",
+  "power": 2,
+  "password": "12345"
+}
+###
+POST http://localhost:8080/api/admin/deleteuser
+//删除用户信息
+token:db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "id": 7
+}
+###
+POST http://localhost:8080/api/admin/alltest
+//返回所有考试信息
+token:db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+###
+POST http://localhost:8080/api/admin/addtest
+//添加考试信息
+token:db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+   {
+      "testname": "高级语言程序设计阶段考试2",
+      "place": "丹青楼502",
+      "peoplenumber": 40,
+      "status": "未开始",
+      "message": "机考",
+      "usertest": null,
+      "starttime": "2019-06-22T16:30:00",
+      "endtime": "2019-06-22T18:30:00"
+    }
+
+###
+POST http://localhost:8080/api/admin/allfptest
+//查询全部监考分配信息（教师和对应的考场）
+token:db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+###
+POST http://localhost:8080/api/admin/fptest
+//添加监考分配信息（教师和对应的考场）
+token:db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "name": {
+    "id": 2
+  },
+  "testname": {
+    "id": 4
+  }
+}
+###
+POST http://localhost:8080/api/admin/deletefptest
+//删除监考分配信息（教师和对应的考场）
+token:db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "id": 14
+}
+###
+POST http://localhost:8080/api/admin/alltask
+//查询所有任务信息
+token:db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+###
+POST http://localhost:8080/api/admin/addtask
+//添加任务信息
+token:db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "taskname": "煮了王波",
+  "detail": "把王波煮了吃了！",
+  "peoplenumber": 1,
+  "status": "未开始",
+  "starttime": "2019-06-16T15:55:47",
+  "endtime": "2019-06-29T15:55:38"
+
+}
+###
+POST http://localhost:8080/api/admin/updatetask
+//修改任务信息
+token:db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "id": 1,
+  "taskname": "煮了王波?",
+  "detail": "把王波煮了吃了！",
+  "peoplenumber": 1,
+  "status": "未开始",
+  "starttime": "2019-06-16T15:55:47",
+  "endtime": "2019-06-29T15:55:38"
+
+}
+
+###
+POST http://localhost:8080/api/admin/updatetask
+//关闭任务信息，必须有id，status更改为关闭，在前端判断若为已关闭则不提供修改接口
+//所有修改内容务必全部回传，否则会造成数据库清空！
+token:db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "id": 1,
+  "taskname": "煮了王波?",
+  "detail": "把王波煮了吃了！",
+  "peoplenumber": 1,
+  "status": "已关闭",
+  "starttime": "2019-06-16T15:55:47",
+  "endtime": "2019-06-29T15:55:38"
+}
+
+###
